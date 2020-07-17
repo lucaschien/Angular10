@@ -1,0 +1,50 @@
+<div class="test-component">
+  <h6>第一個組件 test-component</h6> 
+  {{ test }}
+
+  <!-- 額外研究 event 的套用 (event name))="function($event)"
+  -->
+  <input type="text" 
+    [(ngModel)]="test" 
+    (change)="testChange($event)">
+  <div *ngIf="!test else have">沒有輸入喔</div>
+  <ng-template #have>
+    <div>有輸入</div>
+  </ng-template>
+
+  <ng-template [ngIf]="!test">沒有輸入喔.使用ng-template</ng-template>
+
+  <hr>
+
+  <!-- 額外研究 Pipes管道 的使用, 
+       如 {{ item.price | currency }} 中 currency 就是了... 就是 vue 的 filter
+
+       額外研究 trackBy 就是 vue 的 :key="'a'+i"  :key="'b'+i"
+       [xx]="" 就是 vue 的 :xx=""
+
+       額外研究 [class]="{ 'test-ngFor': true,  'special': item.price > 1 } 
+       就是 vue 的 ：class="['test-ngFor', {'special': item.price > 1}]"
+
+       額外研究 [ngClass] 就是使用一個 function 去做邏輯判斷
+       額外研究 [ngStyle] 就是使用一個 function 去做邏輯判斷
+  -->
+  <p *ngFor="let item of testList; index as i; trackBy: trackByItems"
+    [class]="{ 'test-ngFor': true,  'special': item.price > 1 }"
+    [id]="item.id"
+    (click)="testClick(item, i)">
+    <i [ngClass]="(item.price > 1)? 'seq' : ''">{{ i+1 }}</i> : 
+    {{ item.name }} - price: 
+    <span [ngStyle]="{
+      color: (item.price > 1)? 'pink' : 'yellow',
+      'font-size': (item.price > 1)? '20px' : '14px'
+    }">{{ item.price | currency }}</span>
+  </p>
+  <button (click)="change()">change</button>
+  <pre>{{testList | json}}</pre>
+
+  <hr>
+
+  <button (click)="setRootColor()">設定RootColor</button>
+  
+
+</div>
