@@ -1,5 +1,7 @@
 <div class="test-component">
-  <h6>第一個組件 test-component</h6> 
+  <h6>第一個組件 test-component 
+    <span class="testName-box" (click)="callClickName()">(props testName: {{ testName }})</span>
+  </h6> 
   {{ test }}
 
   <!-- 額外研究 event 的套用 (event name))="function($event)"
@@ -39,12 +41,11 @@
       'font-size': (item.price > 1)? '20px' : '14px'
     }">{{ item.price | currency }}</span>
   </p>
-  <button (click)="change()">change</button>
+  <button (click)="change()">change testList 陣列</button>
   <pre>{{testList | json}}</pre>
 
   <hr>
 
   <button (click)="setRootColor()">設定RootColor</button>
   
-
 </div>

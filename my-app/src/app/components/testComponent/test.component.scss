@@ -1,6 +1,14 @@
 .test-component {
   border: 2px solid red;
   padding: 20px;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+
+  .testName-box {
+    user-select: none;
+    cursor: pointer;
+  }
 
   //實驗 ngFor 迴圈
   .test-ngFor {

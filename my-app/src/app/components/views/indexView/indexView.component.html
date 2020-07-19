@@ -1,0 +1,12 @@
+<div class="indexView">
+  <h6>index</h6>
+  
+  <!-- 發現: testName有無[]代表意思不同,
+      [testName] 代表是綁定某個變數
+      testName 代表是直接給一個值
+     -->
+     <test-comp [testName]="testName" (clickName)="getMyTestNamr($event)"></test-comp>
+     <test-comp testName="bbbb" (clickName)="getMyTestNamr($event)"></test-comp>
+     <user-info-comp></user-info-comp>
+  
+  </div>

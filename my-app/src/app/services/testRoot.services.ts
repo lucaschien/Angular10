@@ -19,7 +19,7 @@ export class TestRootServices {
   public getColor(): string {
     return this.color;
   }
-  public setColor(color: string):void {
+  public setColor(color: string): void {
     this.color = color;
   }
 

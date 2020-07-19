@@ -1,7 +1,9 @@
-<div>
-  {{ title }}
-  <comp-test></comp-test>
-  <user-info-comp></user-info-comp>
-</div>
+<h1>{{ title }}</h1>
 
+<div class="menu-box">
+  menu: 
+  <a [routerLink]="['/index']">index</a>
+  <a [routerLink]="['/userInfo', '123']">userInfo (params)</a>
+  <a [routerLink]="['/userInfo', '456']" [queryParams]="{a:'aaa', b:'bbb'}">userInfo (params + queryString)</a>
+</div>
 <router-outlet></router-outlet>
