@@ -8,13 +8,22 @@
 
 import { Injectable } from '@angular/core';
 
+interface CartInterface {
+  id: string;
+  name: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class TestRootServices {
+  constructor() {}
+
   public color: string = 'blue';
 
-  constructor() {}
+  //定義購物車資料集合
+  public cart: CartInterface[] = [];
+
 
   public getColor(): string {
     return this.color;
@@ -22,5 +31,24 @@ export class TestRootServices {
   public setColor(color: string): void {
     this.color = color;
   }
+
+  public addToCart(obj) {
+    console.log('obj....', obj);
+    if (obj.id && obj.name) {
+      this.cart.push(obj);
+    }
+  }
+
+  public clearCart(id) {
+    this.cart = this.cart.filter((item) => {
+      return item.id !== id
+    });
+  }
+
+  public getCart(): CartInterface[] {
+    return this.cart
+  }
+
+
 
 }

@@ -5,4 +5,17 @@
 
   <p>params: {{ params }}</p>
   <pre>queryString: {{ queryString | json }}</pre>
+
+  <hr>
+  <input type="text" placeholder="請輸入顏色名稱" 
+    [(ngModel)]="newColorName">
+  <button type="button" (click)="createColorInCart()">增加顏色進購物車</button>
+
+  <div class="cart-box">
+    <h6>觀看掛在 root service 的 cart:</h6>
+    <span *ngFor="let item of cart; index as i" >
+      {{ item.name }}
+      <i (click)="removeColorInCart(item.id)">X</i>
+    </span>
+  </div>
 </div>
