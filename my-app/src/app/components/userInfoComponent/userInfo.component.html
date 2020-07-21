@@ -14,9 +14,23 @@
 
   <div class="cart-box">
     <h6>觀看掛在 root service 的 cart:</h6>
-    <span *ngFor="let item of cart; index as i" >
-      {{ item.name }}
-      <i (click)="removeColorInCart(item.id)">X</i>
-    </span>
+    <div *ngIf="cart">
+      <!-- 發現 *ngFor 的語法寫在 ng-templae 上要改變寫法... 原因是 *開頭的是語法糖, 
+        <div *ngFor="let stand of stands"></div>
+        會被解析成
+        <ng-template ngFor let-stand [ngForOf]="stands">
+       -->
+      <ng-template ngFor let-item [ngForOf]="cart">
+        <span *ngIf="!item.inEdit else inEdit" (dblclick)="editColor(item)">
+          {{ item.name }}
+          <i (click)="removeColorInCart(item.id)">X</i>
+        </span>
+        <ng-template #inEdit>
+          <input type="text" [(ngModel)]="item.name">
+          <button type="button" (click)="saveEditColor(item)">儲存</button>
+          <button type="button" (click)="cancelEditColor(item)">取消</button>
+        </ng-template>
+      </ng-template>
+    </div>
   </div>
 </div>

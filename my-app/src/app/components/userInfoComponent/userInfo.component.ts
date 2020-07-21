@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router'; //取得URL參數用
 })
 
 export class UserInfoComponent implements OnInit {
-  constructor(
+  constructor (
     private testRootServices: TestRootServices,
     private route: ActivatedRoute
   ) {}
@@ -61,6 +61,25 @@ export class UserInfoComponent implements OnInit {
 
   public getAllColors () {
     this.cart = this.testRootServices.getCart();
+  }
+
+  public editColor(item) {
+    item.inEdit = true;
+    item.catchName = item.name;
+    console.log('item...', item);
+  }
+
+  public saveEditColor(item) {
+    delete item.inEdit;
+    delete item.catchName;
+    console.log('item...', item);
+  }
+
+  public cancelEditColor(item) {
+    item.name = item.catchName;
+    delete item.inEdit;
+    delete item.catchName;
+    console.log('item...', item);
   }
 
 }

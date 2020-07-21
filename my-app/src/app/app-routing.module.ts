@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IndexViewComponent } from './components/views/indexView/IndexView.component';
+import { IndexViewComponent } from './views/indexView/IndexView.component';
 import { TestComponent } from './components/testComponent/test.component';
 import { UserInfoComponent } from './components/userInfoComponent/userInfo.component';
 

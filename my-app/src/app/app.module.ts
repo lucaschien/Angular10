@@ -6,11 +6,12 @@ import { AppRoutingModule } from './app-routing.module'; //此模塊使用哪個
 import { FormsModule } from '@angular/forms';
 
 import { TestRootServices } from './services/testRoot.services';
-//類似 vue container 的定義
-import { IndexViewComponent } from './components/views/indexView/IndexView.component';
+
+//類似 vue containers 的定義
+import { AppComponent } from './containers/appComponent/app.component';
 
 //類似 vue views 的定義
-import { AppComponent } from './components/appComponent/app.component';
+import { IndexViewComponent } from './views/indexView/IndexView.component';
 
 //一般組件定義
 import { TestComponent } from './components/testComponent/test.component';
