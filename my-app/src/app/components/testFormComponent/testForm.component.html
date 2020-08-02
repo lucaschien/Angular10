@@ -1,0 +1,22 @@
+<div class="test-form-component">
+
+  <h6>實驗angular的form表單用法</h6>
+
+  <form [formGroup]="cinatactForm" (ngSubmit)="onSubmit(cinatactForm.value)">
+    <label>
+      姓名:
+      <input type="text" formControlName="user_name">
+    </label>
+    <label>
+      信箱:
+      <input type="text" formControlName="user_email">
+    </label>
+    <label>
+      聯繫內容:
+      <textarea formControlName="user_say"></textarea>
+    </label>
+    <hr>
+    <button type="submit">送出</button>
+  </form>
+
+</div>

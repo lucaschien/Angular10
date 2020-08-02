@@ -14,14 +14,14 @@ import { TestRootServices } from '../../services/testRoot.services';
 })
 export class TestComponent implements OnInit, OnDestroy {
   //注意: 當 Component 被實例化時，會建立一個新的 Service 實體，Service 的存活週期是跟隨著 Component
-  constructor(
+  constructor (
     private utilsServices: UtilsServices, 
     private testRootServices: TestRootServices,
   ) {
   }
   
   @Input() testName: string; //實驗讓父層帶入屬性, 類似 vue 的 props
-  @Output() clickName = new EventEmitter(); //實驗讓父層帶入方法, 類似 vue 的 emit
+  @Output() clickName = new EventEmitter(); //實驗讓父層帶入方法, 類似 vue 的 $emit
 
   callClickName() {
     //注意: angular emit 限定只能帶一個參數, 因此如果要帶多個就用 {} 包起來吧...爛

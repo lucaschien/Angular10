@@ -33,4 +33,10 @@
       </ng-template>
     </div>
   </div>
+
+  <hr>
+
+  <button type="button" (click)="callAPI()">測試呼叫api</button>
+  <div style="font-size: 13px;" *ngFor="let item of accoutList">{{ item.nickName }}, {{item.email}}</div>
+
 </div>

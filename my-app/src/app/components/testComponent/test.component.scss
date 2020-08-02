@@ -8,6 +8,10 @@
   .testName-box {
     user-select: none;
     cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px 8px;
   }
 
   //實驗 ngFor 迴圈
