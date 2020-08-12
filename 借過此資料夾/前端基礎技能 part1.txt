@@ -1,0 +1,104 @@
+前端"基礎"技能分享會
+
+開場說明
+.為什麼會有這次分享,因為前端技術涵蓋了視覺與後端資料串接,可以讓大家多交流.
+.分享內容沒有絕對性,是我個人的心得.
+.不講前端流行的框架,不講艱深的技術,只講通用性觀念.
+
+------------------------------------------ 分享開始 --------------------------------------
+
+1.前端三劍客, HTML,CSS,javascript
+  一切先從 html 開始思考, 
+  因為 html 怎麼長, 
+  影響 css select 與層級怎麼寫, 
+  影響 javascript 怎麼 select DOM 與 怎麼操作 DOM.
+
+  ------------------------------------------------------------
+
+  // 說明: 影響 css select 與層級怎麼寫
+  假設: 一個左中右的畫面
+  <div class="main">
+    <div class="left">left</div>
+    <div class="center">center</div>
+    <div class="right">right</div>
+  </div>
+  <style>
+    /* 哪種寫法比較靈活？ 各自優缺點是什麼? */
+    方式一  <--- 此方法比較靈活, 原因是 .left, .center, .right 可以撰寫通用的樣式, 且不受.main的影響
+    .main {...}
+    .left {...}
+    .center {...}
+    .right {...}
+
+    方式二  <--- 此方法缺點, 層級上樣式只能在 .main 以內, 當不在.main中時, 就必須在撰寫一套 .left, .center, .right, 
+    .main {
+      .left {...}
+      .center {...}
+      .right {...}
+    }
+  </style>
+
+  ------------------------------------------------------------
+
+  // 說明: 影響 javascript 怎麼 select DOM 與 怎麼操作 DOM
+  ◎假設以下的HTML中, 要對 .list 內的圖片加上 click event
+  <h1>
+    <img src="logo.png">
+    <p>XXX網站</p>
+  </h1>
+  <ul class="list">
+    <li><img src="photo1.png"></li>
+    <li><img src="photo2.png"></li>
+    <li><img src="photo3.png"></li>
+  </ul>
+  <script>
+    (function(window, document) {
+      // 說明: 怎麼 select DOM
+      方式一 錯誤, 會多選到 <h1> 中的 <img>
+      var $imgs = document.getElementsByTagName("IMG");
+      方式二 正確 
+      var $list = document.getElementsByClassName('list');
+      var $imgs = $list[0].getElementsByTagName("IMG");
+
+
+      // 說明: 怎麼操作 DOM
+      var $list = document.getElementsByClassName('list');
+      var $imgs = $list[0].getElementsByTagName("IMG");
+      for (var $img of $imgs) {
+        $img.addEventListener('click', function(event) {
+          console.log(event.target);
+        });
+      }
+    })(window, document)
+  </script>
+
+  ------------------------------------------------------------
+
+  那html要怎麼長呢？由第2點說明
+
+-----------------------------------------------------------------------------------------
+
+2.如何分析UI設計師的畫面  (會用電商或是mobile這類平台舉例)
+  2-1.掌握原則,由大區塊分到小區塊
+  2-2.找出大,中,小區塊中共同與差異處
+  2-3.區塊的邏輯如何轉成 html
+  2-4.版面區塊的CSS切版技術說明  (flow, flex, grid, position)
+    2-4-1.如何思考區塊的RWD細節
+
+-----------------------------------------------------------------------------------------
+
+3.區塊劃分的概念,與各前端框架拆分 component 的概念很雷同  (會用 vue 或 angular 或 react 舉例)
+  3-1.視覺相同或很類似的
+  3-2.可以重覆使用
+  3-3.可以避免業務邏輯太多耦合
+
+  angular
+    <product-list-comp productName="iphone7" (enterDetail)="enterDetailFunc($event)"></product-list-comp>
+  vue
+    <product-list-comp :productName="'iphone7'" :enterDetail="enterDetailFunc"></product-list-comp>
+  react
+    <product-list-comp productName="{'iphone7'}" onClick="{this.enterDetailFunc}"></product-list-comp>
+
+-----------------------------------------------------------------------------------------
+
+4.詢問大家下次希望了解哪方面的前端技術?
