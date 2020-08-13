@@ -1,6 +1,6 @@
 前端"基礎"技能分享會
 
-開場說明
+本次分享會
 .為什麼會有這次分享,因為前端技術涵蓋了視覺與後端資料串接,可以讓大家多交流.
 .分享內容沒有絕對性,是我個人的心得.
 .不講前端流行的框架,不講艱深的技術,只講通用性觀念.
@@ -91,6 +91,11 @@
   3-1.視覺相同或很類似的
   3-2.可以重覆使用
   3-3.可以避免業務邏輯太多耦合
+
+  比如有一個產品列表 
+  <li>
+     <span>iphone7</span>
+  </li>
 
   angular
     <product-list-comp productName="iphone7" (enterDetail)="enterDetailFunc($event)"></product-list-comp>
