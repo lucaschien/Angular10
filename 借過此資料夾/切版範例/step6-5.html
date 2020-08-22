@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>flex</title>
+<style>
+html, body{
+	padding:0;
+	margin:0;
+}
+
+.box-default {
+  padding: 10px;
+  border: 1px solid red;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.box-a {
+  width: 1069px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.box-a .item {
+  color: #fff;
+  text-align: center;
+  flex-grow: 1;
+  flex: 0 0 calc(33.3% - 4px);
+}
+.box-a .item:first-child {
+  background-color: green;
+}
+.box-a .item:nth-child(2) {
+  background-color: pink;
+}
+.box-a .item:last-child {
+  background-color: yellow;
+}
+
+</style>
+<body>
+
+  <div class="box-default box-a">
+    <div class="item" >
+      <div class="item-body">1</div>
+    </div>
+    <div class="item" >
+      <div class="item-body">2</div>
+    </div>
+    <div class="item" >
+      <div class="item-body">3</div>
+    </div>
+  </div>
+  
+</body>
+</html>
