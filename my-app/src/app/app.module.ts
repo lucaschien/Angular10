@@ -21,6 +21,7 @@ import { ContactUsViewComponent } from './views/contactUsView/contactUsView.comp
 import { TestComponent } from './components/testComponent/test.component';
 import { UserInfoComponent } from './components/userInfoComponent/userInfo.component';
 import { TestFormComponent } from './components/testFormComponent/testForm.component';
+import { TestSlotComponent } from './components/testSlotComponent/testSlot.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { TestFormComponent } from './components/testFormComponent/testForm.compo
     AppComponent,
     TestComponent,
     UserInfoComponent,
-    TestFormComponent
+    TestFormComponent,
+    TestSlotComponent
   ],
   //依賴其他的模組
   imports: [

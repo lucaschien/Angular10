@@ -13,7 +13,8 @@
   <button type="button" (click)="createColorInCart()">增加顏色進購物車</button>
 
   <div class="cart-box">
-    <h6>觀看掛在 root service 的 cart:</h6>
+    <!-- 這邊實驗使用 innerHTML 的方法給予 html -->
+    <h6 [innerHTML]="'<span>觀看掛在 root service 的 cart:::::</span>'"></h6>
     <div *ngIf="cart">
       <!-- 發現 *ngFor 的語法寫在 ng-templae 上要改變寫法... 原因是 *開頭的是語法糖, 
         <div *ngFor="let stand of stands"></div>

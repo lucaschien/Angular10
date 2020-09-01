@@ -4,7 +4,10 @@
   </h6> 
   {{ test }}
 
-  <!-- 額外研究 event 的套用 (event name))="function($event)"
+  <!-- 額外研究 event 的套用 (event name)="function($event)"
+       注意 #have 是angular的"範本參考變數", 而不是傳統id的意思
+           而且如同字面上"範本"的意思, 這變數只能在 html 中使用,
+           xxx.ts 那邊的 controller 是參考不到的... 爛不像vue的:ref
   -->
   <input type="text" 
     [(ngModel)]="test" 
@@ -15,6 +18,22 @@
   </ng-template>
 
   <ng-template [ngIf]="!test">沒有輸入喔.使用ng-template</ng-template>
+
+  <br><br>
+
+  這邊實驗使用 [hidden] (就是v-show相反的意思)
+  <div [hidden]="!test">hidden用法 - 有輸入</div>
+
+  <hr>
+
+  <h6>實驗 ngSwitch </h6>
+  <!-- 我猜 angular 應該沒有多層的 if.. else if... else 所以只能用 switch 去達到類似的效果 -->
+  <div [ngSwitch]="testSwitch">
+    <span *ngSwitchCase="'a1'">比對到:a1</span>
+    <span *ngSwitchCase="'a2'">比對到:a2</span>
+    <span *ngSwitchCase="'a3'">比對到:a3</span>
+    <span *ngSwitchDefault>無比對到資料</span>
+  </div>
 
   <hr>
 
@@ -37,7 +56,7 @@
     <i [ngClass]="(item.price > 1)? 'seq' : ''">{{ i+1 }}</i> : 
     {{ item.name }} - price: 
     <span [ngStyle]="{
-      color: (item.price > 1)? 'pink' : 'yellow',
+      'color': (item.price > 1)? 'pink' : 'yellow',
       'font-size': (item.price > 1)? '20px' : '14px'
     }">{{ item.price | currency }}</span>
   </p>

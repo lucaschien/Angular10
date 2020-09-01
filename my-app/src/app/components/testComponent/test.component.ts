@@ -32,9 +32,12 @@ export class TestComponent implements OnInit, OnDestroy {
 
   public testList: Array<any> = [
     {id: 'a1', name: 'lucas', price:0},
-    {id: 'a2', name: 'bert', price:0},
-    {id: 'a3', name: 'jack', price:0},
+    {id: 'a2', name: 'bert',  price:0},
+    {id: 'a3', name: 'jack',  price:0},
   ];
+
+  // 提供 ngSwatch 用
+  public testSwitch = 'a2';
 
   /* 生命週期的順序依照以下順序
     ngOnChanges - 在輸入屬性 (input)/輸出屬性 (output)的繫結值發生變化時呼叫。 (多次執行, @input值發生變化時都會呼叫) <--- 後會的鉤子最後都會因為他而觸發
@@ -74,10 +77,10 @@ export class TestComponent implements OnInit, OnDestroy {
 
   public change() {
     this.testList = [
-      {id: 'a1', name: 'lucas', price:0},
-      {id: 'a2', name: 'bert', price:0},
+      {id: 'a1', name: 'lucas',  price:0},
+      {id: 'a2', name: 'bert',   price:0},
       {id: 'a3', name: 'jack22', price:0},
-      {id: 'a4', name: 'wwwww', price:0},
+      {id: 'a4', name: 'wwwww',  price:0},
     ];
   }
 

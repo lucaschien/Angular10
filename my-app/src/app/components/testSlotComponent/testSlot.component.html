@@ -1,0 +1,14 @@
+<div class="test-slot-component">
+  <h6>組件 test-slot-component</h6>
+
+  <!-- 類似 vue 的 slot 但是比 slot 遜很多 -->
+  <!-- 一般用法 -->
+  <ng-content></ng-content>
+  <!-- 使用 css select -->
+  <ng-content select=".test-body"></ng-content>
+  <!-- 使用 html tag -->
+  <ng-content select="p"></ng-content>
+  <!-- 使用 html attibute -->
+  <ng-content select="[test2]"></ng-content>
+
+</div>

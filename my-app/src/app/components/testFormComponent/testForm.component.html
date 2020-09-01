@@ -1,22 +1,24 @@
 <div class="test-form-component">
-
+  <!-- 之後還可以研究自定義驗證函式 -->
   <h6>實驗angular的form表單用法</h6>
 
-  <form [formGroup]="cinatactForm" (ngSubmit)="onSubmit(cinatactForm.value)">
+  <form [formGroup]="cinatactForm" 
+    (ngSubmit)="onSubmit(cinatactForm)">
     <label>
       姓名:
-      <input type="text" formControlName="user_name">
+      <input type="text" formControlName="user_name" required maxlength="4">
     </label>
     <label>
       信箱:
-      <input type="text" formControlName="user_email">
+      <input type="text" formControlName="user_email" required email>
     </label>
     <label>
       聯繫內容:
-      <textarea formControlName="user_say"></textarea>
+      <textarea formControlName="user_say" required maxlength="300" minlength="4"></textarea>
     </label>
     <hr>
-    <button type="submit">送出</button>
+    {{ cinatactForm.valid }}
+    <button type="submit" [disabled]="!cinatactForm.valid">送出</button>
   </form>
 
 </div>

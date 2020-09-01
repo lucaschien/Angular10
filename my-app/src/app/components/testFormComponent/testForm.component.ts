@@ -22,8 +22,8 @@ export class TestFormComponent {
   //建立表單物件, 使用 FormGroup 型別
   cinatactForm: FormGroup; 
 
-  public onSubmit(formValue) {
-    console.log('onSubmit: ', formValue);
+  public onSubmit(form) {
+    console.log('onSubmit: ', form.value);
     this.cinatactForm.reset();
   }
 

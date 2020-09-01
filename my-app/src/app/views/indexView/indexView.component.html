@@ -1,12 +1,22 @@
 <div class="indexView">
   <h6>index</h6>
-  
+  <!-- 實驗跨組件資料的雙向綁定 -->
+  父層的testName: <input type="text" [(ngModel)]="testName" ><br>
+
   <!-- 發現: testName有無[]代表意思不同,
-      [testName] 代表是綁定某個變數
+      [testName] 代表是綁定某個變數 (這樣才會有雙向綁定)
       testName 代表是直接給一個值
      -->
      <test-comp [testName]="testName" (clickName)="getMyTestNamr($event)"></test-comp>
      <test-comp testName="bbbb" (clickName)="getMyTestNamr($event)"></test-comp>
      <user-info-comp></user-info-comp>
+
+     <test-slot-comp>
+       123
+       <div class="test-body">aaa</div>
+       <p>bbbb</p>
+       <div test2>cccc</div>
+       dddd <!-- 發現: 這個dddd在實際網頁呈現時, 會被呈現在上面的123後面 -->
+     </test-slot-comp>
   
   </div>
