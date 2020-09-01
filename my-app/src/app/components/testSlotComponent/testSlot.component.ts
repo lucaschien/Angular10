@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'test-slot-comp',
@@ -9,8 +10,10 @@ import { Component } from '@angular/core';
 
 export class TestSlotComponent {
   constructor () {}
+
+  @Input() useDataModel: any;
   
-  // TODO... 這個練習 slot 的部分, 還可以研究將 data 帶給外部的那種需求.
+  // TODO... 這個練習 slot 的部分, 還可以研究將 data 帶給外部的那種需求. <--- 沒有實驗成功
   // TODO... 還可以練習, 外部有使用 slot 就使用外部的html, 沒使用就用自己預設的html
 
 }

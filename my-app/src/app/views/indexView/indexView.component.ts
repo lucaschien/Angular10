@@ -13,4 +13,11 @@ export class IndexViewComponent {
     console.log(result + '  <<<< 子層呼叫父層的方法.');
   }
 
+  // 提供測試 testSlot.component.ts 組件用的data
+  public slotUseDataModel = {
+    userName: 'lucas',
+    height: 180,
+    color: 'yellow'
+  };
+
 }

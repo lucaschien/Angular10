@@ -18,5 +18,12 @@
        <div test2>cccc</div>
        dddd <!-- 發現: 這個dddd在實際網頁呈現時, 會被呈現在上面的123後面 -->
      </test-slot-comp>
+
+     <!-- 這是原本想要像 vue slot 一樣可以透過 slot 帶 data 或 method 給外部....殘念沒有成功 -->
+     <test-slot-comp [useDataModel]="slotUseDataModel">
+       <ul class="test-body">
+        <li>{{ slotUseDataModel.color }}</li>
+       </ul>
+     </test-slot-comp>
   
   </div>
