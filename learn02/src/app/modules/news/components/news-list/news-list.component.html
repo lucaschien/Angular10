@@ -1,0 +1,6 @@
+<ul class="news-list">
+  <li *ngFor="let item of newsList" (click)="clickNews(item)">
+    {{ item.newsTitle }}
+    {{ item.newsTime }}
+  </li>
+</ul>

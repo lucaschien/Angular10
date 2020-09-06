@@ -1,0 +1,13 @@
+<div class="news-views">
+  <app-unit-menu></app-unit-menu>
+  <h1>{{ title }}</h1>
+
+  <app-news-list
+    [newsList]="newsList"
+    (getOneList)="getNewsDetail($event)"
+    >
+  </app-news-list>
+
+  <div class="news-detail-box" *ngIf="newsDetail">{{ newsDetail | json }}</div>
+
+</div>
