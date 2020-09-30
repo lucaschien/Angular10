@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // 大單元 module
 import { IndexModule } from './modules/index/index.module';
+
 // 筆記: 由於用了laze load所以在主要appModule就不用立刻給予其他單元的 module
 // import { NewsModule } from './modules/news/news.module';
 
@@ -21,8 +22,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     IndexModule
   ],
