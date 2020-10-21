@@ -1,0 +1,18 @@
+@import "../../../variables.scss";
+
+.contactus-views {
+  .contact-form {
+    background-color: rgba($grey, 0.2);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    label {
+      display: block;
+      margin-bottom: 10px;
+      input {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

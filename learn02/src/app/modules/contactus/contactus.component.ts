@@ -9,7 +9,7 @@ import { FormsModule, NgForm, FormControl, FormGroup, Validators } from '@angula
     <form (ngSubmit)="onSubmit()" [formGroup]="testForm">
       <label>姓名: <input type="text" formControlName="userName" required></label>
       <span *ngIf="user_name.invalid && (user_name.dirty || user_name.touched)">
-        <span *ngIf="user_name.errors.required">必填</span>
+        <i *ngIf="user_name.errors.required">必填</i>
       </span>
       <button type="submit" [disabled]="!testForm.valid">送出</button>
       <button type="button" (click)="testForm.reset()">重設表單</button>
@@ -48,14 +48,16 @@ export class UserNameInputComponent implements OnInit  {
     <h5>範本驅動表單的用法</h5>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
 
-    <label>電話: <input type="text"
-        name="userPhone"
-        ngModel
-        #userPhone="ngModel"
-        required></label>
+      <label>電話:
+        <input type="text"
+          name="userPhone"
+          ngModel
+          #userPhone="ngModel"
+          required>
+      </label>
 
       <span *ngIf="userPhone.invalid && (userPhone.dirty || userPhone.touched)">
-        <span *ngIf="userPhone.errors.required">必填</span>
+        <i *ngIf="userPhone.errors.required">必填</i>
       </span>
 
       <button type="submit" [disabled]="!f.valid">送出</button>
@@ -69,9 +71,8 @@ export class UserPhoneInputComponent implements OnInit {
     console.log('範本驅動表單的用法 ....', f.value);
   }
   ngOnInit(): void {
-    // 實驗過幾秒之後給予表單值
     setTimeout(() => {
-      console.log(this);
+      console.log('範本驅動表單...', this);
     }, 3000);
   }
 }
@@ -85,21 +86,21 @@ export class UserPhoneInputComponent implements OnInit {
 export class ContactusComponent implements OnInit {
   constructor() {}
 
-  // modele
+  // model
   title = '聯絡我們';
-
-  userName = '';
-  userPhone = '';
+  // 提醒避免跟 template 上面的#欄位名稱衝突, 使用一層物件當作 [(ngModel)] 的欄位資料綁定
+  formModel = {
+    userName: 'aaaa',
+    userPhone: null
+  };
 
   // methods
   onSubmit(f: NgForm): void {
-    console.log('onSubmit....', f, f.value, f.valid);
-
+    console.log('onSubmit f.form.value....', f.form);
+    console.log('onSubmit f.form.value....', f.form.value);
+    console.log('onSubmit this.formModel....', this.formModel);
   }
 
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void {}
 
 }

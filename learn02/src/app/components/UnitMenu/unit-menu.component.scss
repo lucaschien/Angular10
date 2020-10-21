@@ -1,14 +1,16 @@
+@import "../../../variables.scss";
+
 .unit-menu {
   padding: 10px;
   border-radius: 5px;
-  background-color: rgb(202, 202, 202);
+  background-color: $grey;
 
   a {
     border-radius: 3px;
     padding: 5px 10px;
     background-color: #fff;
     margin-right: 5px;
-    color: rgb(62, 66, 85);
+    color: $grey1;
     text-decoration-line: none;
   }
 }
