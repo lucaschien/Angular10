@@ -19,7 +19,7 @@ export class NewsComponent implements OnInit {
   // methods
   getNewsDetail(item): any {
     // 利用之前學習 node js 的 lucas-studio api 來測 ajax
-    const path = 'http://localhost:3000/api/news/detail';
+    const path = 'http://localhost:3200/api/news/detail';
     const parm = { _id: item._id };
     this.httpService.post(path, parm).subscribe((result) => {
       this.newsDetail = result.data.items[0];
@@ -28,7 +28,7 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     // 利用之前學習 node js 的 lucas-studio api 來測 ajax
-    const path = 'http://localhost:3000/api/news/list';
+    const path = 'http://localhost:3200/api/news/list';
     const parm = {nowPage: 1, limitPage: 5, keyWord: null, sortKey: null, sortType: -1};
     this.httpService.post(path, parm).subscribe((result) => {
       this.newsList = result.data.items;
