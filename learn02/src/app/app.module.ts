@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // 大單元 module
 import { IndexModule } from './modules/index/index.module';
 
-// 筆記: 由於用了laze load所以在主要appModule就不用立刻給予其他單元的 module
+// 筆記: 由於用了 laze load 所以在主要 appModule 就不用立刻給予其他單元的 module
 // import { NewsModule } from './modules/news/news.module';
 
 import { AppComponent } from './app.component';
@@ -31,4 +31,4 @@ import { AppComponent } from './app.component';
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule {}

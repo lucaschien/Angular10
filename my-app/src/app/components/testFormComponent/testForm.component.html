@@ -2,8 +2,8 @@
   <!-- 之後還可以研究自定義驗證函式 -->
   <h6>實驗angular的form表單用法</h6>
 
-  <form [formGroup]="cinatactForm" 
-    (ngSubmit)="onSubmit(cinatactForm)">
+  <form [formGroup]="conatactForm" 
+    (ngSubmit)="onSubmit(conatactForm)">
     <label>
       姓名:
       <input type="text" formControlName="user_name" required maxlength="4">
@@ -17,8 +17,8 @@
       <textarea formControlName="user_say" required maxlength="300" minlength="4"></textarea>
     </label>
     <hr>
-    {{ cinatactForm.valid }}
-    <button type="submit" [disabled]="!cinatactForm.valid">送出</button>
+    {{ conatactForm.valid }}
+    <button type="submit" [disabled]="!conatactForm.valid">送出</button>
   </form>
 
 </div>

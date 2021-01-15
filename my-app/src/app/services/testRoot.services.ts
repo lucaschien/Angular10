@@ -1,6 +1,6 @@
 //這一支是我練習掛載到 root 的服務
 
-//讓所有組件不用特地import就可以使用此服務的方法 <--- angular沒有這種用法,每一個組件或module都要自己import
+//讓所有組件不用特地 import 就可以使用此服務的方法 <--- angular沒有這種用法,每一個組件或module都要自己import
 
 /* { providedIn: 'root' } 意思是類別建立的實體是掛在 root 上, 
   因此每一個組件在import的時後, 不會在該組件中建立實體.
@@ -48,7 +48,5 @@ export class TestRootServices {
   public getCart(): CartInterface[] {
     return this.cart
   }
-
-
 
 }

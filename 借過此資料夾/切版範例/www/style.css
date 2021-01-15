@@ -143,3 +143,187 @@ a {
 .left-box .ad-box a:last-child {
   margin-bottom: 0;
 }
+
+/* 首頁右邊區塊通用性樣式 */
+.right-box .block-box {
+  margin-bottom: 14px;
+  background-color: #eeeeee;
+}
+.right-box .block-box.space {
+  padding: 10px 9px 10px 10px;
+}
+.right-box h4 {
+  margin: 0;
+  padding: 0;
+}
+
+/* #blockA */
+#blockA {
+  background-color: #b1b1b1;
+  margin-bottom: 22px;
+  height: 380px;
+}
+/* #blockB */
+#blockB {
+  display: flex;
+  justify-content: space-between;
+}
+#blockB li {
+  flex: 0 0 calc(33% - 4px);
+}
+#blockB h4 {
+  margin: 0 0 10px 0;
+}
+#blockB a {
+  background-color: rgb(181, 140, 140);
+  display: block;
+  width: 100%;
+  height: 110px;
+}
+/* #blockC */
+#blockC {}
+/* #blockD */
+#blockD {}
+#blockD .block-title-box {
+  text-align: right;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #e2e2e6;
+}
+#blockD .block-title-box:after {
+  content: '';
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 0;
+}
+#blockD .block-title-box h4 {
+  float: left;
+}
+#blockD .block-title-box a {
+  font-size: 13px;
+}
+#blockD .block-title-box span {
+  font-size: 13px;
+}
+#blockD .block-title-box span:before {
+  content: '';
+  border-left: 1px solid #3f3f3f;
+  display: inline-block;
+  vertical-align: inherit;
+  height: 10px;
+  margin: 0 5px;
+}
+#blockD .block-content-box {
+  position: relative;
+}
+#blockD .block-content-box .change-btn {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+}
+#blockD .block-content-box .change-btn.left-btn {
+  left: 0;
+}
+#blockD .block-content-box .change-btn.right-btn {
+  right: 0;
+}
+#blockD .block-content-box .one-gallery-box {
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+}
+#blockD .one-gallery-left-box {
+  flex: 0 0 calc(33% - 4px);
+}
+#blockD .one-gallery-left-box a {
+  width: 100%;
+  height: 520px;
+  display: block;
+  background-color: rgb(227, 227, 187);
+}
+#blockD .one-gallery-center-box {
+  flex: 0 0 calc(33% - 4px);
+}
+
+/* box1, box2 共用的產品名稱樣式設定 */
+#blockD .one-gallery-center-box .one-product {
+  box-sizing: border-box;
+  position: relative;
+}
+#blockD .one-gallery-center-box .one-product .prod-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.6);
+  padding: 5px;
+}
+#blockD .one-gallery-center-box .one-product .prod-name p {
+  padding: 0;
+  margin: 0;
+}
+#blockD .one-gallery-center-box .one-product .prod-name p:first-child {
+  color: #ff3295;
+  font-size: 13px;
+}
+#blockD .one-gallery-center-box .one-product .prod-name p:last-child {
+  color: rgb(159, 159, 159);
+  font-size: 12px;
+}
+
+#blockD .one-gallery-center-box .box1 {
+  margin-bottom: 8px;
+  position: relative;
+}
+#blockD .one-gallery-center-box .box1 .one-product {
+  width: 100%;
+  height: 168px;
+  background-color: #cbf2f7;
+}
+#blockD .one-gallery-center-box .box2 {}
+#blockD .one-gallery-center-box .box2:after {
+  content: '';
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 0;
+}
+#blockD .one-gallery-center-box .box2 .one-product {
+  float: left;
+  width: calc(50% - 5px);
+  height: 168px;
+  margin: 0 8px 8px 0;
+  background-color: #cbf2f7;
+}
+#blockD .one-gallery-center-box .box2 .one-product:nth-child(even) {
+	margin-right: 0;
+}
+#blockD .one-gallery-center-box .box2 .one-product:nth-child(3),
+#blockD .one-gallery-center-box .box2 .one-product:nth-child(4) {
+	margin-bottom: 0;
+}
+
+#blockD .one-gallery-right-box {
+  flex: 0 0 calc(33% - 4px);
+}
+#blockD .block-bottom-box {
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  margin-top: 8px;
+}
+#blockD .block-bottom-box h4 {
+  padding: 0 20px;
+  background-color: pink;
+  color: #fff;
+  text-align: center;
+}
+#blockD .block-bottom-box a {
+  min-height: 40px;
+  padding: 0 20px;
+  text-align: center;
+  background-color: rgb(227, 227, 187);
+  flex: 0 0 calc(20% - 70px);
+}

@@ -25,14 +25,14 @@ export class UserInfoComponent implements OnInit {
   queryString: object;
   cart = [];
 
-  accoutList =[];
+  accoutList = [];
 
   ngOnInit() {
     this.rootColor = this.testRootServices.getColor();
     this.getAllColors(); //發現在這邊執行, 而該方法中有跟service相關的函式呼叫的話, 會有類似 vuex getters 的效果
     //實驗url帶參數 - (params)
     this.route.paramMap.subscribe(params => {
-      this.params = params.get('testId')
+      this.params = params.get('testId');
       console.log('url params: ', this.params);
     });
     //實驗url帶參數 - (queryString)
@@ -93,7 +93,7 @@ export class UserInfoComponent implements OnInit {
 
   // ajax 方法 (提醒此api是用我自己local端起nodeJs那邊學習的專案包lucas-studio的api)
   public callAPI() {
-    let path: string = `http://localhost:3000/api/account/list`;
+    let path: string = `http://localhost:3200/api/account/list`;
     this.http.get<any>(path).subscribe((result) => {
       if (result.errorCode === '99660001') {
         this.accoutList = result.data.items;

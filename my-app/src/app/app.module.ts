@@ -44,7 +44,7 @@ import { TestSlotComponent } from './components/testSlotComponent/testSlot.compo
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  //使用哪些service,如果service是設定在這邊,
+  //使用哪些service, 如果root層級的service是設定在這邊,
   //那此模組下的所有component都可以共用這服務的"類別實體",
   //而不是在該component內建一個類別實體
   providers: [
